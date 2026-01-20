@@ -13,7 +13,10 @@ body {
   margin: 0;
   background-color: var(--bg-dark);
   color: var(--text-main);
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    sans-serif;
 }
 
 .lab-container {
@@ -28,8 +31,15 @@ header {
   padding-bottom: 20px;
 }
 
-h1 { color: var(--accent-blue); margin: 0; }
-.target-db { color: #fb923c; font-family: monospace; font-style: italic; }
+h1 {
+  color: var(--accent-blue);
+  margin: 0;
+}
+.target-db {
+  color: #fb923c;
+  font-family: monospace;
+  font-style: italic;
+}
 
 section {
   background: var(--bg-card);
@@ -40,8 +50,17 @@ section {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 }
 
-.form-group { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-end; }
-.input-field { display: flex; flex-direction: column; gap: 5px; }
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-end;
+}
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 
 label {
   font-size: 10px;
@@ -59,7 +78,10 @@ input {
   font-size: 14px;
 }
 
-input:focus { outline: 1px solid var(--accent-blue); border-color: var(--accent-blue); }
+input:focus {
+  outline: 1px solid var(--accent-blue);
+  border-color: var(--accent-blue);
+}
 
 .btn {
   padding: 10px 25px;
@@ -70,8 +92,13 @@ input:focus { outline: 1px solid var(--accent-blue); border-color: var(--accent-
   transition: opacity 0.2s;
 }
 
-.btn-blue { background: #2563eb; color: white; }
-.btn-blue:hover { background: #3b82f6; }
+.btn-blue {
+  background: #2563eb;
+  color: white;
+}
+.btn-blue:hover {
+  background: #3b82f6;
+}
 
 .error-banner {
   background: rgba(127, 29, 29, 0.4);
@@ -90,25 +117,186 @@ input:focus { outline: 1px solid var(--accent-blue); border-color: var(--accent-
   border: 1px solid var(--border);
 }
 
-table { width: 100%; border-collapse: collapse; text-align: left; }
-th { background: #334155; padding: 12px 20px; font-size: 12px; color: var(--text-muted); text-transform: uppercase; }
-td { padding: 15px 20px; border-bottom: 1px solid var(--border); font-family: monospace; font-size: 14px; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+th {
+  background: #334155;
+  padding: 12px 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+td {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--border);
+  font-family: monospace;
+  font-size: 14px;
+}
 
 .terminal {
   background: black;
   padding: 20px;
   border-radius: 8px;
   border-left: 4px solid var(--accent-blue);
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
 }
 
 .modal-overlay {
-  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal {
   background: var(--bg-card);
-  padding: 30px; border-radius: 12px; max-width: 400px; width: 90%;
-  text-align: center; border: 1px solid var(--border);
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+/* Full-screen backdrop */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9999;
+}
+
+/* The Modal Box */
+.modal-box {
+  width: 100%;
+  max-width: 450px;
+  background-color: #0a0a0a;
+  border-top: 4px solid #666;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  font-family: "Courier New", Courier, monospace;
+  overflow: hidden;
+}
+
+/* Error State (Red) */
+.modal-error {
+  border-color: #ff3333;
+  box-shadow: 0 0 20px rgba(255, 51, 51, 0.2);
+}
+
+/* Info/Success State (Amber) */
+.modal-info {
+  border-color: #ffaa00;
+  box-shadow: 0 0 20px rgba(255, 170, 0, 0.2);
+}
+
+/* Header bar */
+.modal-header {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.system-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888;
+}
+
+.dot-container {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #333;
+  border-radius: 50%;
+}
+
+/* Body Content */
+.modal-body {
+  padding: 30px;
+}
+
+.message-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.status-icon {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.modal-error .status-icon {
+  color: #ff3333;
+}
+.modal-info .status-icon {
+  color: #ffaa00;
+}
+
+.status-text {
+  color: #e0e0e0;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  word-break: normal;
+}
+
+/* Button Styling */
+.button-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.acknowledge-btn {
+  background: transparent;
+  padding: 8px 20px;
+  font-family: inherit;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Red button for errors */
+.modal-error .acknowledge-btn {
+  color: #ff3333;
+  border: 1px solid #661111;
+}
+
+.modal-error .acknowledge-btn:hover {
+  background: #220000;
+  color: #ff6666;
+}
+
+/* Amber button for info */
+.modal-info .acknowledge-btn {
+  color: #ffaa00;
+  border: 1px solid #664400;
+}
+
+.modal-info .acknowledge-btn:hover {
+  background: #221100;
+  color: #ffcc66;
 }
