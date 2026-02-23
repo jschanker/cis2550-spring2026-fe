@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import './App.css';
 import SqlInjection from "./pages/SqlInjection";
 import DirectoryTraversal from "./pages/DirectoryTraversal";
+import CommandInjection from "./pages/CommandInjection";
 import "./styles.css";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<SqlInjection />} />
           <Route path="/dir-traversal" element={<DirectoryTraversal />} />
+          <Route path="/command-injection" element={<CommandInjection />} />
         </Routes>
       </BrowserRouter>
     </>
